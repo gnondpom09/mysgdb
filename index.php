@@ -76,8 +76,9 @@
                 while ($flag = @readdir($content)) {
                     // extract name of flag
                     $code = explode(".", $flag);
+                    $img = file_get_contents($directory . "/" . $flag);
                     // update flag
-                    $update->execute($flag, $code[0]);   
+                    $update->execute(array($img, $code[0])); 
                 }
                 closedir($content);  
             }
@@ -129,7 +130,7 @@
                     <?php  
                         // Display results from database
                         if ($results->execute()) :
-                            while ($row = $results->fetch()) :
+                            while ($row = $results->fetch(PDO::FETCH_ASSOC)) :
                     ?> 
                                 <tr>
                                     <td>
