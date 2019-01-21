@@ -1,0 +1,115 @@
+/** Imports **/
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,700');
+
+/** Variables **/
+$primary: rgb(33, 33, 33);
+$secondary: #43A3C9;
+$white: #fff;
+
+/** Reset **/
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/** Content **/
+.container {
+    display: flex;
+    height: 100vh;
+    .left {
+        border-right: 0.5px solid $primary;
+    }
+    .col {
+        flex-direction: column;
+        padding: 0;
+        display: flex;
+        width: 50%;
+        height: 100%;
+        align-items: flex-start;
+        overflow: scroll;
+        form {
+            background-color: $primary;
+            color: $white;
+            padding: 4%;
+            width: 92%;
+            margin: 0 auto;
+            h2 {
+                text-align: center;
+                padding: 5px 0 20px 0;
+                text-transform: uppercase;
+                font-weight: 700;
+                color: $secondary;
+            }
+            fieldset {
+                padding: 20px;
+                input[type="submit"] {
+                    padding: 5px;
+                    width: 48%;
+                    margin: 0.5%;
+                    border: none;
+                    border-radius: 0;
+                    background-color: $white;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                }
+                .reset {
+                    background-color: rgba($secondary, 0.9) !important;
+                    color: $white !important;
+                }
+                h4 {
+                    padding: 5px 10px 20px 0;
+                }
+                p {
+                    input[type="radio"] {
+                        margin: 0 10px;
+                    }
+                }
+            }
+        }
+        .debug {
+            // margin: 20px auto;
+            width: 92%;
+            padding: 4%;
+            border-top: 2px solid $secondary;
+            background-color: $primary;
+            p {
+                color: $secondary;
+                span {
+                    color: $white;
+                }
+            }
+        }
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        th {
+            background-color: $secondary;
+            color: $white;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+        tr:hover {
+            background-color: rgba($secondary, 0.3) !important;
+        }
+        td {
+            border: 0.5px solid rgba($primary, 0.5);
+            border-collapse: collapse;
+            padding: 2px;
+            text-align: center;
+            input {
+                background-color: $white;
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
+        }
+        td:first-child {
+            width: 10%;
+        }
+        td:nth-child(2) {
+            width: 50%;
+        }
+    }
+}
